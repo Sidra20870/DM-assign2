@@ -1,0 +1,162 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Dm_assign
+{
+
+    class Program
+    {
+        // question no 3
+        public double _FASTMEalgo_(double b, double k, double m)
+        {
+
+            return Math.Pow(b, k) * Math.Abs(m);
+
+
+        }
+        // question no 2
+        public int _euclidean(int a, int b)
+        {
+            if (a == 0)
+            {
+                return b;
+            }
+            else
+            {
+                return _euclidean(b % a, a);
+            }
+
+
+
+        }
+        
+       
+        static void Main(string[] args)
+        {
+       
+              Program p = new Program();
+              Console.WriteLine("ENTER value of b");
+              double B = int.Parse(Console.ReadLine());
+              Console.WriteLine("ENTER value of K");
+              double K = int.Parse(Console.ReadLine());
+              Console.WriteLine("ENTER values of M");
+              double M = int.Parse(Console.ReadLine());
+              double N = p._FASTME_(2, 2, -3);
+              Console.WriteLine("ans="+N);
+              Console.WriteLine("Next question GCD");
+
+
+
+
+
+            Console.WriteLine("enter 1st value");
+           
+            int d = int.Parse(Console.ReadLine());
+            Console.WriteLine("enter 2nd value");
+            int f = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("GCD=" + p._euclidean(d, f));
+
+
+            // question no 1
+            
+            Console.WriteLine("enter matrix length");
+            int mat = int.Parse(Console.ReadLine());
+            int[] list = new int[mat];
+            for (int z = 0; z < mat; z++)
+            {
+                Console.WriteLine("put value of A");
+                list[z] = int.Parse(Console.ReadLine());
+            }
+
+
+            int[,] list1 = new int[mat, mat];
+            Console.Write("A=");
+            for (int z = 0; z < list.Length; z++)
+            {
+                Console.Write(list[z]);
+            }
+            Console.WriteLine();
+            for (int z = 0; z < mat; z++)
+            {
+                for (int j = 0; j < mat; j++)
+                {
+                    list1[z, j] = 0;
+                }
+
+            }
+            for (int z = 0; z < mat; z++)
+            {
+                for (int j = 0; j < mat; j++)
+                {
+                    Console.Write(list1[z, j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("put num of making relation");
+            int rel = int.Parse(Console.ReadLine());
+            int k = 0;
+            while (rel > k)
+            {
+
+
+
+                Console.Write("x=");
+                int x = int.Parse(Console.ReadLine());
+                Console.Write("y=");
+                int y = int.Parse(Console.ReadLine());
+                if (list.Contains(x) && list.Contains(y))
+                {
+                    list1[x-1, y-1] = 1;
+                    k++;
+                }
+                else
+                {
+                    Console.WriteLine("invalid");
+
+                }
+                Console.WriteLine();
+
+
+            }
+            for (int z = 0; z < mat; z++)
+            {
+                for (int j = 0; j < mat; j++)
+                {
+                    Console.Write(list1[z, j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+
+
+
+
+
+
+
+            Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+    }
+}
